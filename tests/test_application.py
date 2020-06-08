@@ -1,6 +1,6 @@
 import pytest
 
-from ci_workshop.application import App
+from workshop_ci.application import App
 
 
 @pytest.fixture
