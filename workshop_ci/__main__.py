@@ -12,9 +12,14 @@ from .application import App
 
 
 @click.command()
-def hello_world():
+@click.argument('first_name')
+@click.argument('last_name')
+@click.option('--verbose', is_flag=True, help="Will print verbose messages.")
+def hello_world(first_name, last_name, verbose):
     app = App()
-    print(app.get_hello_world())
+    if verbose:
+        print("Performing hello world.")
+    print(app.get_hello_world(first_name, last_name))
 
 
 @click.group()
